@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --no-turbopack)",
+      "Bash(where node:*)",
+      "Bash(where npm:*)",
+      "Bash(where npx:*)",
+      "Bash(cmd.exe /c \"where node 2>NUL & where npm 2>NUL & where npx 2>NUL\")",
+      "Bash(export PATH=\"/c/Program Files/nodejs:$PATH\")",
+      "Bash(npm --version)",
+      "Read(//c/Program Files/**)",
+      "Read(//mnt/c/Program Files/**)",
+      "Read(//c/Users/vitto/**)",
+      "Bash(export PATH=\"/c/Users/vitto/AppData/Local/nvm/v24.14.0:/c/Users/vitto/AppData/Local/nvm:$PATH\")",
+      "Bash(npm init:*)",
+      "Bash(sed -i 's/\"\"name\"\": \"\".*\"\"/\"\"name\"\": \"\"vittorio-portfolio\"\"/' package.json)",
+      "Bash(npx create-next-app@latest vittorio-site --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --no-turbopack)",
+      "Bash(rm -rf \"c:/Users/vitto/Desktop/vittorio-site\")",
+      "Bash(rm -f package.json)",
+      "Bash(sed -i 's/\"\"description\"\": \"\".*\"\"/\"\"description\"\": \"\"\"\"/' package.json)",
+      "Bash(npm install:*)",
+      "Bash(npx next:*)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\vitto\\.claude\\projects\\c--Users-vitto-Desktop-WebSiteVittorio\\memory"
+    ]
+  }
+}
