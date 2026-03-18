@@ -43,6 +43,17 @@ const skillCategories = [
     ],
   },
   {
+    title: "AI & Prompt Engineering",
+    skills: [
+      { name: "Prompt Engineering", level: 90 },
+      { name: "ChatGPT / OpenAI", level: 90 },
+      { name: "Claude / Anthropic", level: 90 },
+      { name: "GitHub Copilot", level: 85 },
+      { name: "Gemini / Google AI", level: 80 },
+      { name: "AI-Assisted Development", level: 90 },
+    ],
+  },
+  {
     title: "Soft Skills",
     skills: [
       { name: "Team Collaboration", level: 95 },

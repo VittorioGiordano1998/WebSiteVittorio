@@ -19,7 +19,13 @@
       "Bash(rm -f package.json)",
       "Bash(sed -i 's/\"\"description\"\": \"\".*\"\"/\"\"description\"\": \"\"\"\"/' package.json)",
       "Bash(npm install:*)",
-      "Bash(npx next:*)"
+      "Bash(npx next:*)",
+      "Bash(cmd.exe /c \"where gh 2>NUL\")",
+      "WebFetch(domain:docs.github.com)",
+      "Bash(npx gh:*)",
+      "Bash(where gh:*)",
+      "Bash(winget install:*)",
+      "Bash(cmd.exe /c \"winget install --id GitHub.cli\")"
     ],
     "additionalDirectories": [
       "c:\\Users\\vitto\\.claude\\projects\\c--Users-vitto-Desktop-WebSiteVittorio\\memory"
