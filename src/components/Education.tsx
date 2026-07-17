@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import BorderGlow from "./BorderGlow";
+import SpotlightCard from "./SpotlightCard";
 
 const education = [
   {
@@ -72,14 +72,7 @@ export default function Education() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
             >
-              <BorderGlow
-                backgroundColor="#111111"
-                glowColor="262 88 66"
-                borderRadius={16}
-                glowRadius={24}
-                edgeSensitivity={25}
-                colors={["#8b5cf6", "#6d28d9", "#c084fc"]}
-              >
+              <SpotlightCard>
                 <div className="p-8">
                   <div className="flex flex-col md:flex-row md:items-center gap-6">
                     <div className="text-4xl">{edu.icon}</div>
@@ -100,7 +93,7 @@ export default function Education() {
                     </div>
                   </div>
                 </div>
-              </BorderGlow>
+              </SpotlightCard>
             </motion.div>
           ))}
         </div>

@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import BorderGlow from "./BorderGlow";
+import SpotlightCard from "./SpotlightCard";
 
 const skillCategories = [
   {
@@ -106,14 +106,7 @@ export default function Skills() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: ci * 0.1 }}
             >
-              <BorderGlow
-                backgroundColor="#111111"
-                glowColor="262 88 66"
-                borderRadius={16}
-                glowRadius={24}
-                edgeSensitivity={25}
-                colors={["#8b5cf6", "#6d28d9", "#c084fc"]}
-              >
+              <SpotlightCard>
                 <div className="p-6">
                   <h3 className="text-lg font-semibold mb-6">{category.title}</h3>
                   <div className="space-y-5">
@@ -142,7 +135,7 @@ export default function Skills() {
                     ))}
                   </div>
                 </div>
-              </BorderGlow>
+              </SpotlightCard>
             </motion.div>
           ))}
         </div>

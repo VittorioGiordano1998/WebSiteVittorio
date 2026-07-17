@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import BorderGlow from "./BorderGlow";
+import SpotlightCard from "./SpotlightCard";
 
 const experiences = [
   {
@@ -93,14 +93,7 @@ export default function Experience() {
                   )}
                 </div>
 
-                <BorderGlow
-                  backgroundColor="#111111"
-                  glowColor="262 88 66"
-                  borderRadius={16}
-                  glowRadius={24}
-                  edgeSensitivity={25}
-                  colors={["#8b5cf6", "#6d28d9", "#c084fc"]}
-                >
+                <SpotlightCard>
                   <div className="p-6">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
                       <div>
@@ -127,7 +120,7 @@ export default function Experience() {
                       ))}
                     </div>
                   </div>
-                </BorderGlow>
+                </SpotlightCard>
               </motion.div>
             ))}
           </div>

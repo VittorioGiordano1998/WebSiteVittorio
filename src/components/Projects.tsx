@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import BorderGlow from "./BorderGlow";
+import SpotlightCard from "./SpotlightCard";
 
 const projects = [
   {
@@ -91,14 +91,7 @@ export default function Projects() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
             >
-              <BorderGlow
-                backgroundColor="#111111"
-                glowColor="262 88 66"
-                borderRadius={16}
-                glowRadius={24}
-                edgeSensitivity={25}
-                colors={["#8b5cf6", "#6d28d9", "#c084fc"]}
-              >
+              <SpotlightCard>
                 {/* Gradient top bar */}
                 <div
                   className={`h-1 w-full bg-gradient-to-r ${project.gradient}`}
@@ -126,7 +119,7 @@ export default function Projects() {
                     ))}
                   </div>
                 </div>
-              </BorderGlow>
+              </SpotlightCard>
             </motion.div>
           ))}
         </div>
