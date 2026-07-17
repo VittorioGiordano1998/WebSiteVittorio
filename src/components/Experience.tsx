@@ -23,15 +23,6 @@ const experiences = [
     tags: ["Hand Tracking", "XR", "R&D", "Unity"],
     current: false,
   },
-  {
-    role: "Barista",
-    company: "Metropol",
-    period: "2019 — 2020",
-    description:
-      "Developed strong collaboration and organizational skills working in a fast-paced hospitality environment in Cava de' Tirreni.",
-    tags: ["Teamwork", "Organization"],
-    current: false,
-  },
 ];
 
 export default function Experience() {

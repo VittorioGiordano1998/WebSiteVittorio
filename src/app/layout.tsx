@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import DarkVeil from "@/components/DarkVeil";
+import CursorGlass from "@/components/CursorGlass";
 
 export const metadata: Metadata = {
   title: "Vittorio Giordano — Software Developer",
@@ -25,7 +26,7 @@ export default function RootLayout({
       <body>
         <div className="fixed inset-0 z-0">
           <DarkVeil
-            hueShift={270}
+            hueShift={-40}
             noiseIntensity={0.05}
             scanlineIntensity={0.3}
             speed={0.4}
@@ -34,6 +35,7 @@ export default function RootLayout({
             resolutionScale={1}
           />
         </div>
+        <CursorGlass />
         <div className="grain" />
         {children}
       </body>
