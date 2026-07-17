@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import BorderGlow from "./BorderGlow";
 
 const education = [
   {
@@ -70,26 +71,36 @@ export default function Education() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="group relative p-8 rounded-2xl bg-card/50 border border-border hover:border-accent-light/30 hover:bg-card-hover transition-all duration-300"
             >
-              <div className="flex flex-col md:flex-row md:items-center gap-6">
-                <div className="text-4xl">{edu.icon}</div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold mb-1">{edu.degree}</h3>
-                  <p className="text-accent-light font-medium">
-                    {edu.institution}
-                  </p>
-                  <p className="text-muted text-sm">{edu.location}</p>
+              <BorderGlow
+                backgroundColor="#111111"
+                glowColor="262 88 66"
+                borderRadius={16}
+                glowRadius={24}
+                edgeSensitivity={25}
+                colors={["#8b5cf6", "#6d28d9", "#c084fc"]}
+              >
+                <div className="p-8">
+                  <div className="flex flex-col md:flex-row md:items-center gap-6">
+                    <div className="text-4xl">{edu.icon}</div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-semibold mb-1">{edu.degree}</h3>
+                      <p className="text-accent-light font-medium">
+                        {edu.institution}
+                      </p>
+                      <p className="text-muted text-sm">{edu.location}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="font-mono text-sm text-muted">{edu.period}</p>
+                      {edu.grade && (
+                        <p className="mt-1 text-accent-light font-semibold text-lg">
+                          {edu.grade}
+                        </p>
+                      )}
+                    </div>
+                  </div>
                 </div>
-                <div className="text-right">
-                  <p className="font-mono text-sm text-muted">{edu.period}</p>
-                  {edu.grade && (
-                    <p className="mt-1 text-accent-light font-semibold text-lg">
-                      {edu.grade}
-                    </p>
-                  )}
-                </div>
-              </div>
+              </BorderGlow>
             </motion.div>
           ))}
         </div>

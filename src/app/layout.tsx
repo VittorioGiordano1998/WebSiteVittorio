@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import DarkVeil from "@/components/DarkVeil";
 
 export const metadata: Metadata = {
   title: "Vittorio Giordano — Software Developer",
   description:
     "XR & Software Developer specializing in Unity, C#, Java, C++, and web technologies.",
+  icons: "/favicon.svg",
 };
 
 export default function RootLayout({
@@ -21,6 +23,17 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <div className="fixed inset-0 z-0">
+          <DarkVeil
+            hueShift={270}
+            noiseIntensity={0.05}
+            scanlineIntensity={0.3}
+            speed={0.4}
+            scanlineFrequency={0}
+            warpAmount={0}
+            resolutionScale={1}
+          />
+        </div>
         <div className="grain" />
         {children}
       </body>

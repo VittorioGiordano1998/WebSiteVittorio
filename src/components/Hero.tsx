@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import ScrollCanvas from "./ScrollCanvas";
+
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null);
@@ -16,13 +16,12 @@ export default function Hero() {
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.9]);
 
   return (
-    <section ref={ref} className="relative">
-      <ScrollCanvas />
+    <section ref={ref} className="relative h-screen">
 
       {/* Parallax text overlay */}
       <motion.div
         style={{ y, opacity: textOpacity, scale }}
-        className="absolute inset-0 h-screen flex flex-col items-center justify-center z-10 pointer-events-none top-0"
+        className="absolute inset-0 h-screen flex flex-col items-center justify-center z-10 pointer-events-none"
       >
         <motion.p
           initial={{ opacity: 0, y: 20 }}

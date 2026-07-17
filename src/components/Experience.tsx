@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import BorderGlow from "./BorderGlow";
 
 const experiences = [
   {
@@ -92,32 +93,41 @@ export default function Experience() {
                   )}
                 </div>
 
-                <div className="group p-6 rounded-2xl bg-card/50 border border-border hover:border-accent-light/30 hover:bg-card-hover transition-all duration-300">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                    <div>
-                      <h3 className="text-xl font-semibold">{exp.role}</h3>
-                      <p className="text-accent-light font-medium">
-                        {exp.company}
-                      </p>
-                    </div>
-                    <span className="text-muted text-sm font-mono mt-1 md:mt-0">
-                      {exp.period}
-                    </span>
-                  </div>
-                  <p className="text-muted leading-relaxed mb-4">
-                    {exp.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {exp.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 text-xs font-mono bg-accent/10 text-accent-light rounded-full border border-accent/20"
-                      >
-                        {tag}
+                <BorderGlow
+                  backgroundColor="#111111"
+                  glowColor="262 88 66"
+                  borderRadius={16}
+                  glowRadius={24}
+                  edgeSensitivity={25}
+                  colors={["#8b5cf6", "#6d28d9", "#c084fc"]}
+                >
+                  <div className="p-6">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+                      <div>
+                        <h3 className="text-xl font-semibold">{exp.role}</h3>
+                        <p className="text-accent-light font-medium">
+                          {exp.company}
+                        </p>
+                      </div>
+                      <span className="text-muted text-sm font-mono mt-1 md:mt-0">
+                        {exp.period}
                       </span>
-                    ))}
+                    </div>
+                    <p className="text-muted leading-relaxed mb-4">
+                      {exp.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {exp.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-3 py-1 text-xs font-mono bg-accent/10 text-accent-light rounded-full border border-accent/20"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                </BorderGlow>
               </motion.div>
             ))}
           </div>

@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import BorderGlow from "./BorderGlow";
 
 const projects = [
   {
@@ -89,40 +90,43 @@ export default function Projects() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className="group relative rounded-2xl bg-card border border-border hover:border-accent-light/30 overflow-hidden transition-colors duration-300"
             >
-              {/* Gradient top bar */}
-              <div
-                className={`h-1 w-full bg-gradient-to-r ${project.gradient}`}
-              />
+              <BorderGlow
+                backgroundColor="#111111"
+                glowColor="262 88 66"
+                borderRadius={16}
+                glowRadius={24}
+                edgeSensitivity={25}
+                colors={["#8b5cf6", "#6d28d9", "#c084fc"]}
+              >
+                {/* Gradient top bar */}
+                <div
+                  className={`h-1 w-full bg-gradient-to-r ${project.gradient}`}
+                />
 
-              {/* Hover gradient overlay */}
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
-              />
+                <div className="p-6">
+                  <div className="flex items-start justify-between mb-4">
+                    <h3 className="text-lg font-semibold leading-tight">
+                      {project.title}
+                    </h3>
+                  </div>
 
-              <div className="relative p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-lg font-semibold leading-tight">
-                    {project.title}
-                  </h3>
+                  <p className="text-muted text-sm leading-relaxed mb-5">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-xs font-mono text-muted bg-white/5 px-2.5 py-1 rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-
-                <p className="text-muted text-sm leading-relaxed mb-5">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs font-mono text-muted bg-white/5 px-2.5 py-1 rounded-full"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              </BorderGlow>
             </motion.div>
           ))}
         </div>

@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import BorderGlow from "./BorderGlow";
 
 const skillCategories = [
   {
@@ -104,34 +105,44 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: ci * 0.1 }}
-              className="p-6 rounded-2xl bg-card/50 border border-border"
             >
-              <h3 className="text-lg font-semibold mb-6">{category.title}</h3>
-              <div className="space-y-5">
-                {category.skills.map((skill, si) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between text-sm mb-2">
-                      <span className="font-medium">{skill.name}</span>
-                      <span className="text-muted font-mono">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{
-                          duration: 1,
-                          delay: ci * 0.1 + si * 0.05,
-                          ease: "easeOut",
-                        }}
-                        className="h-full rounded-full bg-gradient-to-r from-accent to-accent-light"
-                      />
-                    </div>
+              <BorderGlow
+                backgroundColor="#111111"
+                glowColor="262 88 66"
+                borderRadius={16}
+                glowRadius={24}
+                edgeSensitivity={25}
+                colors={["#8b5cf6", "#6d28d9", "#c084fc"]}
+              >
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold mb-6">{category.title}</h3>
+                  <div className="space-y-5">
+                    {category.skills.map((skill, si) => (
+                      <div key={skill.name}>
+                        <div className="flex justify-between text-sm mb-2">
+                          <span className="font-medium">{skill.name}</span>
+                          <span className="text-muted font-mono">
+                            {skill.level}%
+                          </span>
+                        </div>
+                        <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
+                          <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{ width: `${skill.level}%` }}
+                            viewport={{ once: true }}
+                            transition={{
+                              duration: 1,
+                              delay: ci * 0.1 + si * 0.05,
+                              ease: "easeOut",
+                            }}
+                            className="h-full rounded-full bg-gradient-to-r from-accent to-accent-light"
+                          />
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                </div>
+              </BorderGlow>
             </motion.div>
           ))}
         </div>
