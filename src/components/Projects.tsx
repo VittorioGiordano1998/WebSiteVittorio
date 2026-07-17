@@ -92,10 +92,6 @@ export default function Projects() {
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
             >
               <SpotlightCard>
-                {/* Gradient top bar */}
-                <div
-                  className={`h-1 w-full bg-gradient-to-r ${project.gradient}`}
-                />
 
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-4">
