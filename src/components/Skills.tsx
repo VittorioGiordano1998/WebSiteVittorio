@@ -40,7 +40,6 @@ const skillCategories = [
       { name: "Visual Studio Community", level: 90 },
       { name: "Blender", level: 75 },
       { name: "Android Studio", level: 70 },
-      { name: "Java EE", level: 70 },
     ],
   },
   {
@@ -51,16 +50,6 @@ const skillCategories = [
       { name: "Problem Solving", level: 90 },
       { name: "Communication", level: 90 },
       { name: "Leadership", level: 80 },
-    ],
-  },
-  {
-    title: "AI & Prompt Engineering",
-    skills: [
-      { name: "Prompt Engineering", level: 95 },
-      { name: "Claude / Anthropic", level: 90 },
-      { name: "GitHub Copilot", level: 80 },
-      { name: "Gemini / Google AI", level: 80 },
-      { name: "ChatGPT / OpenAI", level: 80 },
     ],
   },
 ];
