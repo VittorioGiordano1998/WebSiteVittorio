@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import ProfileCard from "./ProfileCard";
 
 export default function About() {
   const ref = useRef<HTMLDivElement>(null);
@@ -32,15 +33,21 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="grid md:grid-cols-2 gap-16 items-center"
         >
-          {/* Left: big statement */}
-          <div>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
-              Building
-              <br />
-              <span className="text-accent-light">immersive</span>
-              <br />
-              digital experiences
-            </h2>
+          {/* Left: ProfileCard */}
+          <div className="flex justify-center">
+            <ProfileCard
+              avatarUrl="/WebSiteVittorio/profile.png"
+              miniAvatarUrl="/WebSiteVittorio/mini-avatar.png"
+              name="Vittorio Giordano"
+              title="XR &amp; Software Developer"
+              contactText="Get in Touch"
+              behindGlowColor="rgba(139, 92, 246, 0.25)"
+              behindGlowSize="25%"
+              innerGradient="linear-gradient(145deg, rgba(109, 40, 217, 0.55) 0%, rgba(139, 92, 246, 0.27) 10%)"
+              onContactClick={() => {
+                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+              }}
+            />
           </div>
 
           {/* Right: description */}
